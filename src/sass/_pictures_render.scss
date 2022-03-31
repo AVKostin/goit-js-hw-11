@@ -14,7 +14,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	margin-right: calc(-1 * #{$card-set-gap});
-	margin-bottom: calc(-1 * #{$card-set-gap});
+	// margin-bottom: calc(-1 * #{$card-set-gap});
 
 	&__item {
 		margin-right: $card-set-gap;
