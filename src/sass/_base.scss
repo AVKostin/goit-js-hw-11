@@ -3,6 +3,7 @@ html {
 	overflow-x: hidden;
 	scroll-behavior: smooth;
 }
+
 body {
 	font-family: Roboto;
 	letter-spacing: 0.04em;
@@ -11,7 +12,9 @@ body {
 	padding-top: 192px;
 	position: relative;
 }
+
 $spinner-animation-speed: 400s;
+
 *,
 ::before,
 ::after {
@@ -24,9 +27,11 @@ $spinner-animation-speed: 400s;
 li {
 	list-style-type: none;
 }
+
 a {
 	text-decoration: none;
 }
+
 a,
 button {
 	cursor: pointer;
@@ -43,9 +48,11 @@ p {
 	@media (max-width: 699px) {
 		font-size: 14px;
 	}
+
 	@media (max-width: 1199px) {
 		font-size: 16px;
 	}
+
 	font-size: 18px;
 }
 
