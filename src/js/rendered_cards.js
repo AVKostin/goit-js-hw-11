@@ -64,7 +64,6 @@ const onEntry = entries => {
 	entries.forEach(entry => {
 		if (entry.isIntersecting && picturesApiService.query !== '') {
 			spinner.classList.remove('is-hidden');
-
 			picturesApiService
 				.fetchPictures()
 				.then(pictures => {
