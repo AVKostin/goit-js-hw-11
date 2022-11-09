@@ -6,20 +6,22 @@
 	justify-content: center;
 	background-color: rgb(235, 252, 255);
 	margin: 0 auto;
-
 	opacity: 1;
 	border-radius: 5px;
 	box-shadow: 2px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
 		0px 2px 2px rgba(0, 0, 0, 0.12);
 }
+
 .search-form input {
 	font-size: 26px;
 	font-weight: 700;
 	background-color: transparent;
 }
+
 .search-form button {
 	background-color: transparent;
 }
+
 .search-form button:hover {
 	fill: rgb(7, 184, 16);
 }
