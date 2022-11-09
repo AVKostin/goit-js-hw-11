@@ -1,7 +1,6 @@
 #toTop {
 	position: fixed;
 	display: inline-block;
-
 	width: 40px;
 	height: 40px;
 	z-index: 1000;
@@ -12,9 +11,6 @@
 	visibility: hidden;
 	transition: all 0.3s ease-in-out;
 }
-// #toTop:hover {
-
-// }
 
 #toTop svg {
 	position: relative;
