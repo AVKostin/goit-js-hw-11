@@ -2,11 +2,9 @@ import cardsTpl from '../templates/cards.hbs';
 import Notiflix from 'notiflix';
 import PicturesApiService from './fetch_api';
 import SimpleLightbox from 'simplelightbox';
-
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const picturesApiService = new PicturesApiService();
-
 const searchFormRef = document.querySelector('#search-form');
 const picturesContainer = document.querySelector('.gallery');
 const guardian = document.querySelector('#guardian');
@@ -26,23 +24,22 @@ const lightbox = new SimpleLightbox('.gallery a', {
 const onSearch = e => {
 	e.preventDefault();
 	picturesApiService.query = e.currentTarget.elements.searchQuery.value;
-
-	if (picturesApiService.query === '') {
-		return Notiflix.Notify.failure('Wrong attempt, please enter something');
-	}
+			if (picturesApiService.query === '') {
+				return Notiflix.Notify.failure('Wrong attempt, please enter something');
+			}
 
 	picturesApiService.resetPage();
 	clearPicturesContainer();
 	spinner.classList.remove('is-hidden');
 
 	picturesApiService.fetchPictures().then(pictures => {
-		if (pictures.data.totalHits !== 0 && pictures.data.hits.length !== 0) {
-			Notiflix.Notify.success(`Hooray! We found ${pictures.data.totalHits} images.`);
-		} else {
-			Notiflix.Notify.failure(
-				'Sorry, there are no images matching your search query. Please try again.',
-			);
-		}
+			if (pictures.data.totalHits !== 0 && pictures.data.hits.length !== 0) {
+				Notiflix.Notify.success(`Hooray! We found ${pictures.data.totalHits} images.`);
+			} else {
+				Notiflix.Notify.failure(
+					'Sorry, there are no images matching your search query. Please try again.',
+				);
+			}
 
 		insertPicturesMarkup(pictures);
 		picturesApiService.incrementPage();
@@ -70,9 +67,7 @@ const onEntry = entries => {
 					if (pictures.data.hits.length === 0 && pictures.data.totalHits !== 0) {
 						Notiflix.Notify.info("We're sorry, but you've reached the end of search results.");
 					}
-
 					insertPicturesMarkup(pictures);
-
 					lightbox.refresh();
 					picturesApiService.incrementPage();
 					spinner.classList.add('is-hidden');
